@@ -2,7 +2,7 @@
 
 ## Prerequisites - Software to Install on Laptops
 
-Before starting any exercise, ensure students have these programs installed:
+Before starting any exercise, ensure you have these programs installed:
 
 1. **Cisco Packet Tracer** (Latest version from Cisco Networking Academy)
 2. **PuTTY** (SSH/Telnet client for Windows) or Terminal (for Mac/Linux)
