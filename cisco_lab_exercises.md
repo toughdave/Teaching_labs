@@ -1,5 +1,6 @@
-# Cisco 3850 Switch Lab Exercises - 6 Simple Projects
+# Cisco 3850 Switch Lab Exercises - 3 Simple Projects
 
+## Prerequisites - Disconnect from Wi-Fi - no internet for this exercise
 ## Prerequisites - Software to Install on Laptops
 
 Before starting any exercise, ensure you have these programs installed:
