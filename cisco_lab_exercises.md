@@ -2,7 +2,7 @@
 
 ## Prerequisites - Software to Install on Laptops
 
-Before starting any exercise, ensure students have these programs installed:
+Before starting any exercise, ensure you have these programs installed:
 
 1. **Cisco Packet Tracer** (Latest version from Cisco Networking Academy)
 2. **PuTTY** (SSH/Telnet client for Windows) or Terminal (for Mac/Linux)
@@ -18,17 +18,28 @@ Before starting any exercise, ensure students have these programs installed:
 
 ---
 
+
 ## Exercise 1: Basic Switch Configuration and Interface Status
 
 **Learning Objective**: Configure basic switch settings and check interface status
 
 ### Packet Tracer Simulation:
 1. Drag a 2960 switch and 2 PCs onto workspace
-2. Connect PC0 to Fa0/1 and PC1 to Fa0/2 using straight-through cables
+2. Connect PC0 to Gig0/1 and PC1 to Gig0/2 using straight-through cables
 3. Connect PC0 to switch console port using console cable
 4. Click on PC0 → Desktop → Terminal
 5. Configure terminal settings: 9600 baud rate, 8 data bits, no parity, 1 stop bit
 6. Press Enter to access switch CLI
+   
+```
+Switch> enable
+Switch# configure terminal
+Switch(config)# hostname StudentSwitch
+StudentSwitch(config)# exit
+StudentSwitch# show interfaces status
+StudentSwitch# show version
+```
+
 
 ### Physical Lab Steps:
 1. Connect console cable from Laptop 1 to switch console port
@@ -48,7 +59,7 @@ StudentSwitch# show version
 ```
 
 **Expected Result**: Switch hostname changes, interface status displayed
-**Time**: 5-7 minutes
+
 
 ---
 
@@ -60,6 +71,23 @@ StudentSwitch# show version
 1. Use same setup from Exercise 1
 2. Access switch CLI through PC0 terminal
 3. Configure interface descriptions and settings
+
+```
+Switch> enable
+Switch# configure terminal
+Switch(config)# interface GigabitEthernet0/1
+Switch(config-if)# description Laptop-1-Connection
+Switch(config-if)# no shutdown
+Switch(config-if)# exit
+Switch(config)# interface GigabitEthernet0/2
+Switch(config-if)# description Laptop-2-Connection
+Switch(config-if)# no shutdown
+Switch(config-if)# exit
+Switch(config)# exit
+Switch# show interfaces status
+Switch# show running-config
+```
+
 
 ### Physical Lab Steps:
 1. Use console connection established in Exercise 1
@@ -82,7 +110,7 @@ Switch# show running-config
 ```
 
 **Expected Result**: Interface descriptions configured and visible in running-config, ports are active
-**Time**: 6-8 minutes
+
 
 ---
 
@@ -124,7 +152,7 @@ ping 192.168.1.10
 5. Both pings should be successful since both laptops are on the same network
 
 **Expected Result**: Successful ping between both laptops showing network connectivity
-**Time**: 8-10 minutes
+
 
 ---
 
@@ -143,7 +171,7 @@ ping 192.168.1.10
 - `show interfaces [interface-id]` - Detailed interface info
 
 ## Safety Notes:
-- Always save configurations before making major changes
+- Always save configurations before making major changes by using `write memory` or `wr` or `copy running-config startup-config`
 - Use `show running-config` to verify changes before saving
 - Keep a record of original settings before modifications
 - Never disconnect console cable during configuration updates
