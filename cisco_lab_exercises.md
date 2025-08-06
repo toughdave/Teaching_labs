@@ -61,6 +61,26 @@ StudentSwitch# show version
 2. Access switch CLI through PC0 terminal
 3. Create VLANs in global configuration mode
 
+```
+Switch> enable
+Switch# configure terminal
+Switch(config)# vlan 10
+Switch(config-vlan)# name Students
+Switch(config-vlan)# exit
+Switch(config)# vlan 20
+Switch(config-vlan)# name Teachers
+Switch(config-vlan)# exit
+Switch(config)# interface GigabitEthernet0/1
+Switch(config-if)# switchport access vlan 10
+Switch(config-if)# exit
+Switch(config)# interface GigabitEthernet0/2
+Switch(config-if)# switchport access vlan 20
+Switch(config-if)# exit
+Switch(config)# exit
+Switch# show vlan brief
+```
+
+
 ### Physical Lab Steps:
 1. Use console connection established in Exercise 1
 2. Execute these commands on the switch:
