@@ -132,12 +132,12 @@ Switch# show running-config
    - IP Address: 192.168.1.10
    - Subnet Mask: 255.255.255.0
    - Default Gateway: 192.168.1.1
-   - DNS Server: 8.8.8.8
+   - DNS Server: 192.168.1.1
 2. On Laptop 2, configure network adapter:
    - IP Address: 192.168.1.11
    - Subnet Mask: 255.255.255.0
    - Default Gateway: 192.168.1.1
-   - DNS Server: 8.8.8.8
+   - DNS Server: 192.168.1.1
 3. Test connectivity from Laptop 1:
 
 ```
